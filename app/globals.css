@@ -2,32 +2,193 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.clip{
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.clipActive{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@media (min-width: 768px){
+    .clip{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+.container-mission {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    padding: 3rem;
+  }
+  .container-mission .mission-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 1rem;
+    color: #000;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    height: 300px;
+  }
+  .container-mission .mission-content p {
+    width: 80%;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .container-mission .mission-content .mission-icon {
+    font-size: 3rem;
+    color: #671413;
+  }
+@media screen and (max-width: 720px) {
+  .container-mission .mission-content {
+    padding: 0.5rem;
+    gap: 2rem;
+  }
+  .container-mission .mission-content p {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 600px) {
+.container-mission {
+    flex-wrap: wrap;
+  }
+  .container-mission .mission-content {
+    height: auto;
+    gap: 1rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.p1 {
+  border: 1px solid yellow;
+  width: 30%;
+  height: 600px;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.p1 img {
+  width: 100%;
+  height: 200px;
+}
+.p2 {
+  border: 1px solid yellow;
+  width: 30%;
+  height: 600px;
+}
+.p2 img {
+  width: 100%;
+  height: 200px;
+}
+.p3 {
+  border: 1px solid yellow;
+  width: 30%;
+  height: 600px;
+}
+.p3 img {
+  width: 100%;
+  height: 200px;
+}
+
+h1 {
+  font-size: 10vmin;
+  text-align: center;
+  margin-top: 20px;
+  color: #333;
+}
+
+.content {
+  /* grow shrink basis */
+  flex: 1 0 auto;
+}
+.content p {
+  padding: 2vw 10vw 5vw;
+  text-align: justify;
+}
+.r{
+  border-top: 1px dashed #000;
+  width: 100%;
+  
+}
+footer {
+  flex-shrink: 0;
+  border-top: 1px dashed #000;
+  width: 100%;
+  background: #fff;
+  color: #570037;
+}
+.content-footer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  padding: 50px 0 100px;
+
+}
+
+.bloc {
+  flex-basis: 20%;
+  margin: 0 30px;
+}
+
+/* contact */
+.footer-contact h3,
+.footer-services h3,
+.footer-schedule h3,
+.footer-medias h3 {
+  font-size: 22px;
+  padding-bottom: 20px;
+}
+
+.footer-contact p {
+  font-size: 1rem;
+}
+footer .copy-footer {
+  text-align: center;
+  padding: 1rem;
+}
+.media-list {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.media-list a {
+  text-decoration: none;
+  color: #570037;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 20px;
+}
+@media screen and (max-width: 1080px) {
+  .content-footer {
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .bloc {
+    flex-basis: auto;
+    margin: 20px 20px;
+  }
+}
+@media screen and (max-width: 600px){
+  .content-footer {
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .bloc {
+    flex-basis: 70%;
+  }
+  .footer-contact h3,
+  .footer-services h3,
+  .footer-schedule h3,
+  .footer-medias h3 {
+    padding-bottom: 5px;
   }
 }
